@@ -18,7 +18,7 @@ class TestSoftAssertSpecification extends SoftAssertSpecification{
         //  now we check if any soft asserts occured
         checkSoftAsserts()
     }
-    
+
 
 
 }
