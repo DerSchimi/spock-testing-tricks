@@ -4,14 +4,14 @@ import spock.lang.Specification
 
 /**
  */
-class TestSoftAssertSpecification extends SoftAssertSpecification{
+class TestSoftAssertSpecification extends SoftAssertSpecification {
 
     def "simple demo"() {
         when:
         // some simple softAsserts
         softAssert { assert 1 == 2 }
         softAssert { assert 2 == 2 }
-        softAssert { assert System.getProperty("os.name") == 'linux'}
+        softAssert { assert System.getProperty("os.name") == 'linux' }
 
 
         then:
@@ -19,6 +19,20 @@ class TestSoftAssertSpecification extends SoftAssertSpecification{
         checkSoftAsserts()
     }
 
+    def "simple demo that won't fail"() {
+        when:
+        // some simple softAsserts
+        softAssert { assert 1 == 2 }
+        softAssert { assert 2 == 2 }
+        softAssert { assert System.getProperty("os.name") == 'linux' }
+
+
+        then:
+        //  you should not do this!
+        softAsserts.size() == 2
+        softAsserts.clear()
+
+    }
 
 
 }

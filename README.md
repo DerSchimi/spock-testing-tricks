@@ -12,4 +12,6 @@ It might fail when calling checkSoftAsserts at the "expect/then" block of the te
 
 Check TestSoftAssertSpecification for a basic usage.
 This Project is just a workaround until Spock hopefully integrated the softAssert feature.
-a
+
+use "mvn -PSpockTester test" to run the tests
+
